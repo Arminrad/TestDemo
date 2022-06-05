@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FooTest {
 
+    private Foo foo;
+
     @BeforeAll
     static void beforeAll() {
         System.out.println("Before All");
@@ -13,13 +15,14 @@ class FooTest {
 
     @BeforeEach
     public void beforeEach() {
+        foo = new Foo();
         System.out.println("Before Each");
     }
 
     @Test
     public void testFooBar() {
         System.out.println("FooBar");
-        Foo foo = new Foo(); //Arrange: creating foo instance
+        //Foo foo = new Foo(); //Arrange: creating foo instance
 
         String result = foo.fooBar(); //Act: doing CUT(code under test) operation
 
@@ -29,7 +32,7 @@ class FooTest {
     @Test
     public void testFooBar2() {
         System.out.println("FooBar2");
-        Foo foo = new Foo(); //Arrange: creating foo instance
+        //Foo foo = new Foo(); //Arrange: creating foo instance
 
         String result = foo.fooBar(); //Act: doing CUT(code under test) operation
 
